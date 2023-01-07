@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    Rigidbody playerRigidBody;
     float verticalInput;
     float horizontalInput;
     float mouseX;
     [Header("Settings")]
     [SerializeField] float playerSpeed;
     [SerializeField] float cameraSpeed;
-    [SerializeField] float rollingDistance = 30;
+    [SerializeField] float rollingDistance;
+    [SerializeField] float dodgeCooldown = 2;
+    float actCooldown;
 
 
 
+
+    private void Awake()
+    {
+        playerRigidBody = GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
         RotatePlayer();
-        MakePlayerMove();
         RollPlayer();
+        MakePlayerMove();
     }
 
     void MakePlayerMove()
@@ -38,9 +46,18 @@ public class PlayerController : MonoBehaviour
     void RollPlayer()
     {
         Vector3 direction = transform.position - transform.GetChild(0).position;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (actCooldown <= 0)
         {
-            GetComponent<Rigidbody>().MovePosition(transform.position + direction * rollingDistance * -1);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                actCooldown = dodgeCooldown;
+                GetComponent<Rigidbody>().MovePosition(transform.position + direction * rollingDistance * -1);
+            }
+        }
+        else
+        {
+            actCooldown -= Time.deltaTime;
         }
     }
+
 }

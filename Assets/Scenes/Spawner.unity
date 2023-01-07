@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: {fileID: 512243558203241757, guid: 476a1b42c9f3d0b44b6aad101cad3bb5, type: 3}
-  repeatRate: 10
+  spawnRate: 10
 --- !u!4 &655084473
 Transform:
   m_ObjectHideFlags: 0

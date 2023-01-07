@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     Rigidbody playerRigidBody;
     float verticalInput;
     float horizontalInput;
     float mouseX;
+    public static bool isDead;
     [Header("Settings")]
     [SerializeField] float playerSpeed;
     [SerializeField] float cameraSpeed;
@@ -69,3 +71,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
+

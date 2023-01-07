@@ -5,21 +5,33 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     static public int numberOfEnemy = 0;
+    PlayerController playerController;
     [Header("Refrence")]
     [SerializeField] private GameObject seed;
     private Vector3 spawnPosition;
 
     [Header("Settings")]
-    [SerializeField] private float repeatRate = 10f;
+    [SerializeField] float spawnRate;
 
-    private void Start()
+
+    void Start()
     {
-        InvokeRepeating("Spawn", 1f, repeatRate);
+        StartCoroutine(SpawnSeed());
     }
-
-    private void OnDrawGizmosSelected()
+    void Update()
     {
-        Gizmos.DrawWireSphere(transform.position, 100f);
+        if (numberOfEnemy >= 5)
+        {
+            Die();
+        }
+    }
+    IEnumerator SpawnSeed()
+    {
+        while (numberOfEnemy < 5)
+        {
+            Spawn();
+            yield return new WaitForSeconds(spawnRate);
+        }
     }
 
     private void Spawn()
@@ -27,5 +39,14 @@ public class Spawner : MonoBehaviour
         spawnPosition = new Vector3(Random.Range(-100, 100), 30, Random.Range(-100, 100));
         Instantiate(seed, spawnPosition, Quaternion.identity);
         numberOfEnemy++;
+    }
+    void Die()
+    {
+        Debug.Log("You Lost!");
+        PlayerController.isDead = true;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, 100f);
     }
 }

@@ -6,21 +6,30 @@ public class PlayerController : MonoBehaviour
 {
     float verticalInput;
     float horizontalInput;
-    [SerializeField] private float playerSpeed;
+    float mouseX;
+    [Header("Settings")]
+    [SerializeField] float playerSpeed;
+    [SerializeField] float cameraSpeed;
 
-    void Start()
+
+    private void Update()
     {
-        
-    }
-    void FixedUpdate()
-    {
+        RotatePlayer();
         MakePlayerMove();
     }
+
     void MakePlayerMove()
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * playerSpeed);
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * playerSpeed);
+
+    }
+    private void RotatePlayer()
+    {
+        mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * cameraSpeed;
+        transform.Rotate(Vector3.up * mouseX);
+
     }
 }

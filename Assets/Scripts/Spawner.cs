@@ -8,13 +8,13 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject seed;
     private Vector3 spawnPosition;
+
     [Header("Settings")]
     [SerializeField]
-    private float repeatRate=10f;
+    private float repeatRate = 10f;
 
     private void Start()
     {
-        spawnPosition = new Vector3(Random.Range(0, 100), 30, Random.Range(0, 100));
         InvokeRepeating("Spawn", 1f, repeatRate);
     }
 
@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
+        spawnPosition = new Vector3(Random.Range(-100, 100), 30, Random.Range(-100, 100));
         Instantiate(seed, spawnPosition, Quaternion.identity);
     }
 }

@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    static public int numberOfEnemy = 0;
     [Header("Refrence")]
-    [SerializeField]
-    private GameObject seed;
+    [SerializeField] private GameObject seed;
     private Vector3 spawnPosition;
 
     [Header("Settings")]
-    [SerializeField]
-
-    static public int numberOfEnemy = 0;
-    private float repeatRate = 10f;
+    [SerializeField] private float repeatRate = 10f;
 
     private void Start()
     {

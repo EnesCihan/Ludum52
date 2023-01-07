@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         RotatePlayer();
         RollPlayer();
         MakePlayerMove();
+        DigSeed();
     }
 
     void MakePlayerMove()
@@ -60,4 +61,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void DigSeed()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            GameManager.SeedCount++;
+        }
+    }
 }

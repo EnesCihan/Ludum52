@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float spawnRate;
+    [SerializeField] int maxEnemy;
 
 
     void Start()
@@ -20,16 +21,17 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
-        if (numberOfEnemy >= 5)
+        if (numberOfEnemy >= maxEnemy)
         {
             Die();
         }
     }
     IEnumerator SpawnSeed()
     {
-        while (numberOfEnemy < 5)
+        while (numberOfEnemy < maxEnemy)
         {
             Spawn();
+            spawnRate *= 0.95f;
             yield return new WaitForSeconds(spawnRate);
         }
     }

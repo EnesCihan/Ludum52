@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField]
+
+    static public int numberOfEnemy = 0;
     private float repeatRate = 10f;
 
     private void Start()
@@ -27,5 +29,6 @@ public class Spawner : MonoBehaviour
     {
         spawnPosition = new Vector3(Random.Range(-100, 100), 30, Random.Range(-100, 100));
         Instantiate(seed, spawnPosition, Quaternion.identity);
+        numberOfEnemy++;
     }
 }

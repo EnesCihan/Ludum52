@@ -30,6 +30,5 @@ public class PlayerController : MonoBehaviour
     {
         mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * cameraSpeed;
         transform.Rotate(Vector3.up * mouseX);
-
     }
 }

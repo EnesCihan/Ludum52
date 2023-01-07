@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody playerRigidBody;
     float verticalInput;
     float horizontalInput;
     float mouseX;
@@ -20,10 +19,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        playerRigidBody = GetComponent<Rigidbody>();
-    }
 
     private void Update()
     {
@@ -39,6 +34,15 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * playerSpeed);
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * playerSpeed);
+
+        if (verticalInput != 0 || horizontalInput != 0) 
+        {
+            GetComponent<Animator>().SetBool("isRun",true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isRun", false);
+        }
 
     }
     void RotatePlayer()

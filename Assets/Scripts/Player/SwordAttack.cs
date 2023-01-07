@@ -6,13 +6,24 @@ public class SwordAttack : MonoBehaviour
 {
     private void Update()
     {
-        Attack();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
+            
     }
     void Attack()
     {
-        if (Input.GetMouseButton(0))
-        {
-            transform.GetChild(0).gameObject.SetActive(true);
-        }
+            GetComponent<Animator>().SetTrigger("isAttack");
+    }
+    
+    void OpenAttackArea()
+    {
+        transform.GetChild(2).gameObject.SetActive(true);
+    }
+
+    void CloseAttackArea()
+    {
+        transform.GetChild(2).gameObject.SetActive(false);
     }
 }

@@ -25,15 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.2698965
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.46
+      value: -18.024519
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalRotation.w
@@ -217,3 +217,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableSeed: {fileID: 4060775324854425479, guid: 670f53f818a26c24999fce150329b1c9, type: 3}
+--- !u!114 &2824812675373674983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727927363174439609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6152e9a5fa42c49cf8625250d9f9fb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5473852667337760554, guid: ab5e1fe7078654c77a5553710d00e696, type: 3}

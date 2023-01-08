@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float spawnRate;
+    [SerializeField] float minSpawnRate;
 
     private void Awake()
     {
@@ -35,13 +36,13 @@ public class Spawner : MonoBehaviour
     {
         while (numberOfEnemy < maxEnemy && !playerController.isDead)
         {
-            if (spawnRate > 5)
+            if (spawnRate > minSpawnRate)
             {
                 spawnRate *= 0.95f;
             }
             else
             {
-                spawnRate = 4.95f;
+                spawnRate = minSpawnRate;
             }
             Spawn();
             yield return new WaitForSeconds(spawnRate);
@@ -51,7 +52,7 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         Vector3 spawnPosition;
-        spawnPosition = new Vector3(Random.Range(-100, 100), 30, Random.Range(-100, 100));
+        spawnPosition = transform.position + new Vector3(Random.Range(-90, 90), 0, Random.Range(-90, 90));
 
         Instantiate(seed, spawnPosition, Quaternion.Euler(90f, 0f, 0f));
         numberOfEnemy++;
@@ -59,6 +60,6 @@ public class Spawner : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, 100f);
+        Gizmos.DrawWireSphere(transform.position, 90f);
     }
 }

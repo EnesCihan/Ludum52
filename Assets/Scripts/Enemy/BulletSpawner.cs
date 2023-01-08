@@ -8,7 +8,7 @@ public class BulletSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnBullet", 1f, 2f);
+        InvokeRepeating("SpawnBullet", 1f, 3f);
     }
     void SpawnBullet()
     {

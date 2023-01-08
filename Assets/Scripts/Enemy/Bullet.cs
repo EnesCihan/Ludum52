@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    float bulletSpeed = 4f;
+    [SerializeField] float bulletSpeed;
 
     Rigidbody bulletRigidBody;
     PlayerController playerController;
@@ -32,6 +32,10 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerController.currentHealth -= bulletDamage;
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("tree"))
+        {
             Destroy(gameObject);
         }
     }

@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0 || spawner.numberOfEnemy > spawner.maxEnemy)
         {
             isDead = true;
-            GetComponent<Animator>().SetBool("isDead", true);
+            GetComponent<Animator>().SetTrigger("isDead");
         }
     }
 

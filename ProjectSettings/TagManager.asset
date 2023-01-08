@@ -13,6 +13,7 @@ TagManager:
   - Source2
   - Source3
   - Collectable
+  - tree
   layers:
   - Default
   - TransparentFX

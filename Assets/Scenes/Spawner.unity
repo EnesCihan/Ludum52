@@ -1385,6 +1385,10 @@ PrefabInstance:
       propertyPath: playerRunSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8557385221967028743, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
+      propertyPath: rollingDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8672284006179069876, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
       propertyPath: m_RootOrder
       value: 7

@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDead)
         {
-
-
             MakePlayerMove();
             Run();
             RotatePlayer();
@@ -72,12 +70,14 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                GetComponent<Animator>().SetTrigger("isRoll");  
                 actCooldown = dodgeCooldown;
                 GetComponent<Rigidbody>().velocity = -new Vector3(direction.x, 0, direction.z).normalized * rollingDistance;
             }
         }
         else
         {
+
             actCooldown -= Time.deltaTime;
         }
     }
@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0 || spawner.numberOfEnemy > spawner.maxEnemy)
         {
             isDead = true;
+            GetComponent<Animator>().SetBool("isDead", true);
         }
     }
 
@@ -103,6 +104,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RollSmallCollider()
+    {
+        GetComponent<BoxCollider>().size = new Vector3(1, 1, 0.5f);
+        GetComponent<BoxCollider>().center = new Vector3(0, 0.5f, 0);
+    }
+
+    private void RollNormalCollider()
+    {
+        GetComponent<BoxCollider>().size = new Vector3(1, 2, 0.5f);
+        GetComponent<BoxCollider>().center = new Vector3(0, 1f, 0);
+    }
 }
 
 

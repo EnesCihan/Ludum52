@@ -6,7 +6,7 @@ public class SwordAttack : MonoBehaviour
 {
     public void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
         {
             GetComponent<Animator>().SetTrigger("isAttack");
         }

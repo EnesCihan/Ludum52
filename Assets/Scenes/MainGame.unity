@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.005
@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8254585403099600803, guid: 396801a9851a0fe45850461d776cb848, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a26862d9b1971244aa2d9a66801154da, type: 2}
     - target: {fileID: -7365108347508846699, guid: 396801a9851a0fe45850461d776cb848, type: 3}
       propertyPath: m_TagString
       value: Ground
@@ -376,6 +380,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -22.217
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2708bc8917932ef49af822f739fa5371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a26862d9b1971244aa2d9a66801154da, type: 2}
     - target: {fileID: 919132149155446097, guid: 2708bc8917932ef49af822f739fa5371, type: 3}
       propertyPath: m_Name
       value: adaalt (1)
@@ -666,7 +674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2708bc8917932ef49af822f739fa5371, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.7
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2708bc8917932ef49af822f739fa5371, type: 3}
       propertyPath: m_LocalPosition.z
@@ -700,6 +708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -22.217
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2708bc8917932ef49af822f739fa5371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a26862d9b1971244aa2d9a66801154da, type: 2}
     - target: {fileID: 919132149155446097, guid: 2708bc8917932ef49af822f739fa5371, type: 3}
       propertyPath: m_Name
       value: adaalt
@@ -1215,14 +1227,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.050334543, y: -0.1764725, z: 0.18932934, w: 0.9646131}
+  m_LocalRotation: {x: 0.039716527, y: -0.17437835, z: 0.19125985, w: 0.9651086}
   m_LocalPosition: {x: 76.5, y: 61.6, z: -264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 9.435, y: -19.014, z: 20.626}
+  m_LocalEulerAnglesHint: {x: 8.243, y: -18.95, z: 21.041}
 --- !u!1 &710765095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,8 +1368,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.08024714, y: -0.724363, z: 0.08556225, w: 0.67936575}
-  m_LocalPosition: {x: -4.7882624, y: 19.159973, z: 32.41491}
+  m_LocalRotation: {x: 0.080247134, y: -0.724363, z: 0.08556224, w: 0.67936575}
+  m_LocalPosition: {x: -4.7882624, y: 17.559973, z: 32.41491}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2810,8 +2822,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899437599}
-  m_LocalRotation: {x: 0.08024714, y: -0.724363, z: 0.08556225, w: 0.67936575}
-  m_LocalPosition: {x: -4.7882624, y: 19.159973, z: 32.41491}
+  m_LocalRotation: {x: 0.080247134, y: -0.724363, z: 0.08556224, w: 0.67936575}
+  m_LocalPosition: {x: -4.7882624, y: 17.559973, z: 32.41491}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3001,7 +3013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3313,7 +3324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8672284006179069876, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.83
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8672284006179069876, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
       propertyPath: m_LocalPosition.z

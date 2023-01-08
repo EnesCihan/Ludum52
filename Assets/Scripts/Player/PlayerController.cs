@@ -13,14 +13,17 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float mouseX;
     [Header("Settings")]
-    [SerializeField] float playerSpeed;
+    [SerializeField] float firstSpeed;
+    [SerializeField] float playerRunSpeed;
     [SerializeField] float cameraSpeed;
     [SerializeField] float rollingDistance;
     [SerializeField] float dodgeCooldown = 2;
+    float playerSpeed;  
     float actCooldown;
 
     private void Awake()
     {
+        playerSpeed = firstSpeed;
         swordAttack = FindObjectOfType<SwordAttack>();
         spawner = FindObjectOfType<Spawner>();
     }
@@ -28,12 +31,16 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDead)
         {
-            swordAttack.Attack();
+
+
+            MakePlayerMove();
+            Run();
             RotatePlayer();
             RollPlayer();
-            MakePlayerMove();
+            swordAttack.Attack();
             Die();
         }
+        print(playerSpeed);
     }
 
     void MakePlayerMove()
@@ -83,6 +90,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Run()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            playerSpeed = playerRunSpeed;
+        }
+        else
+        {
+            playerSpeed = firstSpeed;
+        }
+    }
 
 }
 

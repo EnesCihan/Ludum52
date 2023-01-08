@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18035254, g: 0.22578925, b: 0.30702662, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -598,9 +598,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c729d346281093b4e864c66d5380ba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfEnemy: 0
+  maxEnemy: 20
   seed: {fileID: 512243558203241757, guid: 476a1b42c9f3d0b44b6aad101cad3bb5, type: 3}
   spawnRate: 10
-  maxEnemy: 3
 --- !u!4 &655084473
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,6 +1376,14 @@ PrefabInstance:
     - target: {fileID: 8291677732826940686, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
       propertyPath: m_Name
       value: MainPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557385221967028743, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
+      propertyPath: firstSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557385221967028743, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
+      propertyPath: playerRunSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8672284006179069876, guid: 1af4ffe2fde5c80418c2c344ca50121d, type: 3}
       propertyPath: m_RootOrder

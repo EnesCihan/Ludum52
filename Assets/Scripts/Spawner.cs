@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator SpawnSeed()
     {
-        while (numberOfEnemy < maxEnemy && playerController.isDead)
+        while (numberOfEnemy < maxEnemy && !playerController.isDead)
         {
             if (spawnRate > 5)
             {

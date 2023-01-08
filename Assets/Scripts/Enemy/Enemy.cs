@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [Header("Refrence")]
     [SerializeField] GameObject collectableSeed;
+    int health = 100;
+    int damage = 51;
 
 
     void OnTriggerEnter(Collider other)
@@ -17,8 +19,6 @@ public class Enemy : MonoBehaviour
     }
     void takeDamage()
     {
-        int health = 100;
-        int damage = Random.Range(35, 67);
         health -= damage;
         if (health <= 0)
         {

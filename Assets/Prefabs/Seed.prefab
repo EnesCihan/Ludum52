@@ -127,5 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d73cbcb664e5a41ade86ea27c03b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 0
-  enemy: {fileID: 7305176859213338293, guid: bd74a7d15c050964c864d544ebbbdb8b, type: 3}
+  enemy: {fileID: 4727927363174439609, guid: 23e645ea16163784e9e0bdd27ba0bd95, type: 3}

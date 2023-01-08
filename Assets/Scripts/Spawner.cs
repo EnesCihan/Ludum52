@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -27,10 +28,17 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator SpawnSeed()
     {
-        while (numberOfEnemy < maxEnemy)
+        while (numberOfEnemy < maxEnemy && !PlayerController.isDead)
         {
+            if (spawnRate > 5)
+            {
+                spawnRate *= 0.95f;
+            }
+            else
+            {
+                spawnRate = 4.95f;
+            }
             Spawn();
-            spawnRate *= 0.95f;
             yield return new WaitForSeconds(spawnRate);
         }
     }
@@ -38,12 +46,11 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         spawnPosition = new Vector3(Random.Range(-100, 100), 30, Random.Range(-100, 100));
-        Instantiate(seed, spawnPosition, Quaternion.identity);
+        Instantiate(seed, spawnPosition, Quaternion.Euler(90f, 0f, 0f));
         numberOfEnemy++;
     }
     void Die()
     {
-        Debug.Log("You Lost!");
         PlayerController.isDead = true;
     }
     private void OnDrawGizmosSelected()

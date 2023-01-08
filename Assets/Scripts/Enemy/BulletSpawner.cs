@@ -5,10 +5,22 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
+    PlayerController playerController;
 
+    private void Awake()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
     void Start()
     {
-        InvokeRepeating("SpawnBullet", 1f, 3f);
+        InvokeRepeating("SpawnBullet", 1f, 2f);
+    }
+    private void Update()
+    {
+        if (playerController.isDead)
+        {
+            CancelInvoke();
+        }
     }
     void SpawnBullet()
     {

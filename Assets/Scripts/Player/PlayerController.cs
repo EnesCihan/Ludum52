@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float cameraSpeed;
     [SerializeField] float rollingDistance;
     [SerializeField] float dodgeCooldown = 2;
-    float playerSpeed;  
+    float playerSpeed;
     float actCooldown;
 
     private void Awake()
@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
             swordAttack.Attack();
             Die();
         }
-        print(playerSpeed);
     }
 
     void MakePlayerMove()
@@ -70,7 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                GetComponent<Animator>().SetTrigger("isRoll");  
+                GetComponent<Animator>().SetTrigger("isRoll");
                 actCooldown = dodgeCooldown;
                 GetComponent<Rigidbody>().velocity = -new Vector3(direction.x, 0, direction.z).normalized * rollingDistance;
             }

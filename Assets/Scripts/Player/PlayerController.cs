@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool isDead;
     float verticalInput;
     float horizontalInput;
     float mouseX;
-    public static bool isDead;
     [Header("Settings")]
     [SerializeField] float playerSpeed;
     [SerializeField] float cameraSpeed;
@@ -16,16 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dodgeCooldown = 2;
     float actCooldown;
 
-
-
-
-
     private void Update()
     {
-        RotatePlayer();
-        RollPlayer();
-        MakePlayerMove();
-        DigSeed();
+        if (!isDead)
+        {
+            RotatePlayer();
+            RollPlayer();
+            MakePlayerMove();
+        }
+
     }
 
     void MakePlayerMove()
@@ -35,9 +34,9 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * playerSpeed);
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * playerSpeed);
 
-        if (verticalInput != 0 || horizontalInput != 0) 
+        if (verticalInput != 0 || horizontalInput != 0)
         {
-            GetComponent<Animator>().SetBool("isRun",true);
+            GetComponent<Animator>().SetBool("isRun", true);
         }
         else
         {
@@ -67,13 +66,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void DigSeed()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            GameManager.SeedCount++;
-        }
-    }
+
 }
 
 

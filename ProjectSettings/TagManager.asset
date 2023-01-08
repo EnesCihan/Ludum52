@@ -8,6 +8,11 @@ TagManager:
   - Object
   - Ground
   - Sword
+  - Source1
+  - Source0
+  - Source2
+  - Source3
+  - Collectable
   layers:
   - Default
   - TransparentFX

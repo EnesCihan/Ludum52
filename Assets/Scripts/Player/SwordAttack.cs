@@ -10,13 +10,12 @@ public class SwordAttack : MonoBehaviour
         {
             Attack();
         }
-            
     }
     void Attack()
     {
-            GetComponent<Animator>().SetTrigger("isAttack");
+        GetComponent<Animator>().SetTrigger("isAttack");
     }
-    
+
     void OpenAttackArea()
     {
         transform.GetChild(2).gameObject.SetActive(true);

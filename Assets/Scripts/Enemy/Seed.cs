@@ -6,6 +6,7 @@ public class Seed : MonoBehaviour
 {
     [Header("Refrence")]
     [SerializeField] GameObject enemy;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ground"))

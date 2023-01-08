@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     static public int numberOfEnemy = 0;
-    PlayerController playerController;
     [Header("Refrence")]
     [SerializeField] private GameObject seed;
     private Vector3 spawnPosition;
@@ -21,7 +20,7 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
-        if (numberOfEnemy >= maxEnemy)
+        if (numberOfEnemy >= maxEnemy && !PlayerController.isDead)
         {
             Die();
         }

@@ -9,6 +9,8 @@ public class Canvas : MonoBehaviour
     PlayerController playerController;
     [SerializeField] TextMeshProUGUI SeedText;
     [SerializeField] TextMeshProUGUI finalSeedText;
+    [SerializeField] Button restartButton;
+    [SerializeField] Button mainMenuButton;
 
     private void Awake()
     {
@@ -21,6 +23,8 @@ public class Canvas : MonoBehaviour
             finalSeedText.gameObject.SetActive(true);
             finalSeedText.text = SeedText.text;
             SeedText.gameObject.SetActive(false);
+            restartButton.gameObject.SetActive(true);
+            mainMenuButton.gameObject.SetActive(true);
         }
     }
 }

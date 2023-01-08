@@ -52,11 +52,11 @@ public class PlayerController : MonoBehaviour
 
         if (verticalInput != 0 || horizontalInput != 0)
         {
-            GetComponent<Animator>().SetBool("isRun", true);
+            GetComponent<Animator>().SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
         }
         else
         {
-            GetComponent<Animator>().SetBool("isRun", false);
+            GetComponent<Animator>().SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
         }
 
     }
@@ -67,13 +67,13 @@ public class PlayerController : MonoBehaviour
     }
     void RollPlayer()
     {
-        Vector3 direction = transform.position - transform.GetChild(0).position;
+        Vector3 direction = transform.position - transform.GetChild(2).position;
         if (actCooldown <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 actCooldown = dodgeCooldown;
-                GetComponent<Rigidbody>().MovePosition(transform.position + direction * rollingDistance * -1);
+                GetComponent<Rigidbody>().velocity = -new Vector3(direction.x, 0, direction.z).normalized * rollingDistance;
             }
         }
         else
@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             playerSpeed = playerRunSpeed;
+            GetComponent<Animator>().SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
         }
         else
         {

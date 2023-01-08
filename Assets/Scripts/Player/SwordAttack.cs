@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    private void Update()
+    public void Attack()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Attack();
+            GetComponent<Animator>().SetTrigger("isAttack");
         }
-    }
-    void Attack()
-    {
-        GetComponent<Animator>().SetTrigger("isAttack");
     }
 
     void OpenAttackArea()

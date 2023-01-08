@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    SwordAttack swordAttack;
     public static bool isDead;
     float verticalInput;
     float horizontalInput;
@@ -16,10 +17,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dodgeCooldown = 2;
     float actCooldown;
 
+    private void Awake()
+    {
+        swordAttack = FindObjectOfType<SwordAttack>();
+    }
     private void Update()
     {
         if (!isDead)
         {
+            swordAttack.Attack();
             RotatePlayer();
             RollPlayer();
             MakePlayerMove();

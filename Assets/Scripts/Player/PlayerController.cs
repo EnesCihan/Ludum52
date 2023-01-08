@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             playerSpeed = playerRunSpeed;
-            GetComponent<Animator>().SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
+            GetComponent<Animator>().SetFloat("Speed", 1f, 0.01f, Time.deltaTime);
         }
         else
         {

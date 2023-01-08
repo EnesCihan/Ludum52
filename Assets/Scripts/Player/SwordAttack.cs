@@ -14,11 +14,11 @@ public class SwordAttack : MonoBehaviour
 
     void OpenAttackArea()
     {
-        transform.GetChild(2).gameObject.SetActive(true);
+        transform.GetChild(5).gameObject.SetActive(true);
     }
 
     void CloseAttackArea()
     {
-        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(5).gameObject.SetActive(false);
     }
 }

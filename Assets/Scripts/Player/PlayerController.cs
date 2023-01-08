@@ -6,7 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     SwordAttack swordAttack;
-    public static bool isDead;
+    Spawner spawner;
+    public bool isDead;
+    public float currentHealth = 100;
     float verticalInput;
     float horizontalInput;
     float mouseX;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         swordAttack = FindObjectOfType<SwordAttack>();
+        spawner = FindObjectOfType<Spawner>();
     }
     private void Update()
     {
@@ -29,8 +32,8 @@ public class PlayerController : MonoBehaviour
             RotatePlayer();
             RollPlayer();
             MakePlayerMove();
+            Die();
         }
-
     }
 
     void MakePlayerMove()
@@ -69,6 +72,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             actCooldown -= Time.deltaTime;
+        }
+    }
+
+    public void Die()
+    {
+        if (currentHealth <= 0 || spawner.numberOfEnemy > spawner.maxEnemy)
+        {
+            isDead = true;
         }
     }
 

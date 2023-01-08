@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        SeedText.text = ("Seed Number" + SeedCount);
+        SeedText.text = ("Seed Number " + SeedCount);
     }
-
-
 }

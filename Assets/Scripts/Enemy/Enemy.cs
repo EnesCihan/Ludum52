@@ -7,6 +7,11 @@ public class Enemy : MonoBehaviour
     [Header("Refrence")]
     [SerializeField] GameObject collectableSeed;
     float health = 100;
+    Spawner spawner;
+    private void Awake()
+    {
+        spawner = FindObjectOfType<Spawner>();
+    }
 
 
     void OnTriggerEnter(Collider other)
@@ -18,11 +23,11 @@ public class Enemy : MonoBehaviour
     }
     void takeDamage()
     {
-        float damage = Random.Range(35,67);
+        float damage = Random.Range(35, 67);
         health -= damage;
         if (health <= 0)
         {
-            Spawner.numberOfEnemy--;
+            spawner.numberOfEnemy--;
             Instantiate(collectableSeed, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
             Destroy(gameObject);
         }

@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         playerSpeed = firstSpeed;
         swordAttack = FindObjectOfType<SwordAttack>();
         spawner = FindObjectOfType<Spawner>();
+        Cursor.visible = false;
     }
     private void Update()
     {
@@ -98,6 +99,7 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             GetComponent<Animator>().SetTrigger("isDead");
             playerAudioSource.PlayOneShot(dieSound);
+            Cursor.visible = true;
         }
     }
 

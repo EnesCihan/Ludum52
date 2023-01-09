@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     }
     void RollPlayer()
     {
-        Vector3 direction = transform.position - transform.GetChild(2).position;
+        Vector3 direction = transform.position - transform.GetChild(5).position;
         if (actCooldown <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))

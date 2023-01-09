@@ -13,14 +13,10 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (playerController.currentHealth == 100)
-            {
-                playerController.currentHealth = 100;
-            }
-            else
-            {
-                playerController.currentHealth += Random.Range(16, 25);
-            }
+
+
+            playerController.currentHealth += Random.Range(16, 25);
+
             GameManager.SeedCount++;
             playerController.Collect();
             Destroy(gameObject);

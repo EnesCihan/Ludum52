@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartScene : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class StartScene : MonoBehaviour
 
     IEnumerator ScenePast()
     {
-        yield return new WaitForSeconds(43f);
-        print("sahne geçildi");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

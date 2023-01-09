@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDead)
         {
+            if (currentHealth >= 100)
+            {
+                currentHealth = 100;
+            }
             MakePlayerMove();
             Run();
             RotatePlayer();

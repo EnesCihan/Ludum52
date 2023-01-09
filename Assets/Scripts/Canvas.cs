@@ -20,11 +20,13 @@ public class Canvas : MonoBehaviour
     {
         if (playerController.isDead)
         {
-            finalSeedText.gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(false);
             finalSeedText.text = SeedText.text;
-            SeedText.gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
             restartButton.gameObject.SetActive(true);
             mainMenuButton.gameObject.SetActive(true);
+
         }
     }
 }

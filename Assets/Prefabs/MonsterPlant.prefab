@@ -119,15 +119,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.4
+      value: -50.96898
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.55
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.35
+      value: 34.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}
       propertyPath: m_LocalRotation.w
@@ -218,7 +218,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -302,6 +302,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &459260771
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727927363174439609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18dbd006ec2ff8c42a21747c69e33c53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2824812675373674983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,26 +348,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableSeed: {fileID: 8084272112548235635, guid: fd54ffd17cb45564d82e4200d3e89db1, type: 3}
---- !u!95 &459260771
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727927363174439609}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18dbd006ec2ff8c42a21747c69e33c53, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  enemyAudioSource: {fileID: 5906806319174734908}
+  takeDamageSound: {fileID: 8300000, guid: 2bccd194fc5deb84abbd89968aa6bb42, type: 3}
+  DeathSound: {fileID: 8300000, guid: 72a323326910f65409378db8da818fa6, type: 3}
+  waitToDie: 1
 --- !u!4 &5392823400839036931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10104bf270a4a2b4c98f660def09ad21, type: 3}

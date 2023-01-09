@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dodgeCooldown = 2;
     float playerSpeed;
     float actCooldown;
+    [Header("Refrence")]
+    [SerializeField] AudioSource playerAudioSource;
+    [Header("Sounds")]
+    [SerializeField] AudioClip playHitSound;
+    [SerializeField] AudioClip dieSound;
+    [SerializeField] AudioClip collectSound;
 
     private void Awake()
     {
@@ -87,6 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             isDead = true;
             GetComponent<Animator>().SetTrigger("isDead");
+            playerAudioSource.PlayOneShot(dieSound);
         }
     }
 
@@ -113,6 +120,15 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<BoxCollider>().size = new Vector3(1, 2, 0.5f);
         GetComponent<BoxCollider>().center = new Vector3(0, 1f, 0);
+    }
+    public void Hitting()
+    {
+        GetComponent<Animator>().SetTrigger("isHit");
+        playerAudioSource.PlayOneShot(playHitSound, 0.5f);
+    }
+    public void Collect()
+    {
+        playerAudioSource.PlayOneShot(collectSound, 0.3f);
     }
 }
 

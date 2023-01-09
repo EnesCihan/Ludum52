@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour
 {
     public static int SeedCount;
     [SerializeField] TextMeshProUGUI SeedText;
+    [SerializeField] Canvas canvas;
     private void Awake()
     {
         SeedCount = 0;
     }
     private void Update()
     {
-        SeedText.text = ("Seed Number " + SeedCount);
+        SeedText.text = (SeedCount.ToString());
     }
     public void RestartGame()
     {

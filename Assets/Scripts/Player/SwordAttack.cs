@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
+    [SerializeField] AudioSource playerAudioSource;
+    [SerializeField] AudioClip swordSound;
     public void Attack()
     {
         if (Input.GetMouseButtonDown(0) && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Roll"))
@@ -15,6 +17,7 @@ public class SwordAttack : MonoBehaviour
     void OpenAttackArea()
     {
         transform.GetChild(5).gameObject.SetActive(true);
+        playerAudioSource.PlayOneShot(swordSound);
     }
 
     void CloseAttackArea()

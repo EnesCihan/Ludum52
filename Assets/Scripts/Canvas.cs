@@ -26,7 +26,7 @@ public class Canvas : MonoBehaviour
             transform.GetChild(3).gameObject.SetActive(false);
             restartButton.gameObject.SetActive(true);
             mainMenuButton.gameObject.SetActive(true);
-
+            transform.GetChild(5).gameObject.SetActive(true);
         }
     }
 }

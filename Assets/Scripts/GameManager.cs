@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 {
     public static int SeedCount;
     [SerializeField] TextMeshProUGUI SeedText;
-    [SerializeField] Canvas canvas;
     private void Awake()
     {
         SeedCount = 0;
@@ -24,6 +23,15 @@ public class GameManager : MonoBehaviour
     }
     public void GoBackMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Exit");
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

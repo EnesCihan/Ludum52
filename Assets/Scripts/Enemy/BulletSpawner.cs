@@ -6,10 +6,11 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     PlayerController playerController;
-
+    Enemy enemy;
     private void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
+        enemy = GetComponent<Enemy>();
     }
     void Start()
     {
@@ -17,7 +18,7 @@ public class BulletSpawner : MonoBehaviour
     }
     private void Update()
     {
-        if (playerController.isDead)
+        if (playerController.isDead || enemy.enemyİsDead)
         {
             CancelInvoke();
         }

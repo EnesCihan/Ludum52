@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float waitToDie;
     float health = 100;
+    public bool enemyİsDead;
     Spawner spawner;
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
         enemyAudioSource.PlayOneShot(takeDamageSound, 0.5f);
         if (health <= 0)
         {
+            enemyİsDead = true;
             GetComponent<Animator>().SetTrigger("Death");
             spawner.numberOfEnemy--;
             Instantiate(collectableSeed, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
@@ -42,6 +44,7 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(waitToDie);
             Destroy(gameObject);
         }
+
     }
 
 }

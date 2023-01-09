@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
         {
             if (spawnRate > minSpawnRate)
             {
-                spawnRate *= 0.95f;
+                spawnRate *= 0.85f;
             }
             else
             {

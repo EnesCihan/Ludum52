@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Sword"))
         {
             takeDamage();
+            GetComponent<Animator>().SetTrigger("Hit");
         }
     }
     void takeDamage()
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            GetComponent<Animator>().SetTrigger("Death");
             spawner.numberOfEnemy--;
             Instantiate(collectableSeed, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
             Destroy(gameObject);

@@ -25,7 +25,7 @@ public class StartScene : MonoBehaviour
 
     IEnumerator ScenePast()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(43f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
